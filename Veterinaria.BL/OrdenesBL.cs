@@ -19,7 +19,7 @@ namespace Veterinaria.BL
         public List<Orden> ObtenerOrdenes()
         {                          
             ListadeOrdenes = _contexto.Ordenes
-                .Include("Clientes")
+                .Include("Cliente")
                 .ToList();
 
             return ListadeOrdenes;
@@ -28,7 +28,7 @@ namespace Veterinaria.BL
         public List<OrdenDetalle> ObtenerOrdenDetalle(int ordenId)
         {
             var listadeOrdenesDetalle = _contexto.OrdenDetalle
-                .Include("Productos")
+                .Include("Producto")
                 .Where(o => o.OrdenId == ordenId).ToList();
 
             return listadeOrdenesDetalle;
@@ -40,7 +40,7 @@ namespace Veterinaria.BL
         public OrdenDetalle ObtenerOrdenDetallePorId(int id)
         {
             var ordenDetalle = _contexto.OrdenDetalle
-                .Include("Productos").FirstOrDefault(p => p.Id == id);
+                .Include("Producto").FirstOrDefault(p => p.Id == id);
 
             return ordenDetalle;
         }
@@ -48,7 +48,7 @@ namespace Veterinaria.BL
         public Orden ObtenerOrden(int id)
         {
             var orden = _contexto.Ordenes
-                .Include("Clientes").FirstOrDefault(p => p.Id == id);
+                .Include("Cliente").FirstOrDefault(p => p.Id == id);
 
 
             return orden;

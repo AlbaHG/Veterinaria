@@ -9,15 +9,15 @@
 <table class="table table-bordered table-hover">
     <tr>
         <td>Clientes</td>
-        <td>@Model.Clientes.Nombre</td>
+        <td>@Model.Cliente.Nombre</td>
     </tr>
     <tr>
         <td>Telefono</td>
-        <td>@Model.Clientes.Telefono</td>
+        <td>@Model.Cliente.Telefono</td>
     </tr>
     <tr>
         <td>Direccion</td>
-        <td>@Model.Clientes.Direccion</td>
+        <td>@Model.Cliente.Direccion</td>
     </tr>
     <tr>
         <td>Fecha</td>
@@ -53,10 +53,10 @@
 @foreach (var item in Model.ListadeOrdenDetalle){
     <tr>
         <td>
-            <img src="@item.Productos.UrlImagen" alt="@item.Productos.Descripcion" style="max-width: 64px; height: auto;" />
+            <img src="@item.Producto.UrlImagen" alt="@item.Producto.Descripcion" style="max-width: 64px; height: auto;" />
         </td>
        <td>
-            @Html.DisplayFor(modelItem => item.Productos.Descripcion)
+            @Html.DisplayFor(modelItem => item.Producto.Descripcion)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Cantidad)

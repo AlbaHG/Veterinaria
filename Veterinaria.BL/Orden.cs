@@ -12,7 +12,7 @@ namespace Veterinaria.BL
         public int Id { get; set; }
         public int ClienteId { get; set; }
 
-        public Clientes Clientes { get; set; }
+        public Clientes Cliente { get; set; }
         public DateTime Fecha { get; set; }
         public double Total { get; set; }
         public bool Activo { get; set; }
@@ -35,7 +35,7 @@ namespace Veterinaria.BL
         public Orden Orden { get; set; }
 
         public int ProductoId { get; set; }
-        public Productos Productos { get; set; }
+        public Productos Producto { get; set; }
 
         public int Cantidad { get; set; }
         public double Precio { get; set; }
