@@ -7,6 +7,7 @@ using Veterinaria.BL;
 
 namespace Veterinaria.WebAdmin.Controllers
 {
+    [Authorize]
     public class ProductosController : Controller
     {
         ProductosBL _productosBL;

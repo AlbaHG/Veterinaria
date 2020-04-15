@@ -18,6 +18,7 @@ namespace Veterinaria.BL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            Database.SetInitializer(new DatosdeInicio());  //Agregar datos de inicio al momento de crear la base de datos 
         }
 
         public DbSet<Productos> Productos { get; set; }
@@ -27,5 +28,7 @@ namespace Veterinaria.BL
 
         public DbSet<Orden> Ordenes { get; set; }
         public DbSet<OrdenDetalle> OrdenDetalle { get; set; }
+
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }

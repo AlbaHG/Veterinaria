@@ -30,6 +30,20 @@ namespace Veterinaria.BL
             return ListadeProductos;
         }
 
+        public List<Productos> ObtenerProductosActivo()
+        {
+
+            ListadeProductos = _contexto.Productos
+                .Include("Categoria")
+                .Where(r => r.Activo == true)
+                .OrderBy(r => r.Categoria.Descripcion) //AGREGADO
+                .ThenBy(r => r.Descripcion)            //AGREGADO
+                .ToList();
+
+
+            return ListadeProductos;
+        }
+
         public List<Productos> ObtenerProductosActivos()
         {
             ListadeProductos = _contexto.Productos

@@ -21,6 +21,7 @@ namespace Veterinaria.BL
         public List<Clientes> ObtenerClientes()
         {
             ListadeClientes = _contexto.Clientes
+                .OrderBy(r => r.Nombre)
                 .ToList();
 
             return ListadeClientes;

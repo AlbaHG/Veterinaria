@@ -7,7 +7,7 @@ using Veterinaria.BL;
 
 namespace Veterinaria.WebAdmin.Controllers
 {
-   
+    [Authorize]
     public class OrdenesController : Controller
     {
         OrdenesBL _ordenesBL;
@@ -30,7 +30,7 @@ namespace Veterinaria.WebAdmin.Controllers
         public ActionResult crear()
         {
             var nuevaOrden = new Orden();
-            var clientes = _clientesBL.ObtenerClientes();
+            var clientes = _clientesBL.ObtenerClientesActivos();
 
             ViewBag.ClienteId = new SelectList(clientes, "Id", "Nombre");
 
@@ -50,7 +50,7 @@ namespace Veterinaria.WebAdmin.Controllers
                 _ordenesBL.GuardarOrden(orden);
                 return RedirectToAction("Index");
             }
-            var clientes = _clientesBL.ObtenerClientes();
+            var clientes = _clientesBL.ObtenerClientesActivos();
 
             ViewBag.ClienteId = new SelectList(clientes, "Id", "Nombre");
 

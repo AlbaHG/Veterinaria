@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace Veterinaria.WebAdmin.Controllers
 {
+    [Authorize]
     public class CategoriasController : Controller
     {
         CategoriasBL _categoriasBL;
